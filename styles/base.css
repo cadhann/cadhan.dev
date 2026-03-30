@@ -1,7 +1,26 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../assets/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../assets/fonts/JetBrainsMono-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Shared values for the background fade and starfield cutoff. */
 :root {
   color-scheme: dark;
   --page-bg: #03060c;
+  --nav-bg: rgb(13, 10, 22);
+  --nav-bg-rgb: 13, 10, 22;
+  --nav-height: calc(env(safe-area-inset-top, 0px) + 3.5rem);
   --fade-start: 60svh;
   --starfield-end: 104svh;
   --hero-height: 188svh;
@@ -27,6 +46,8 @@ body {
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 500;
   /* The purple tone lives on the page background itself to avoid a hero seam */
   background: linear-gradient(
     180deg,

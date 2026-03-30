@@ -8,8 +8,10 @@
 /* Constrains the animated field to the upper viewport and feather it into the page. */
 .starfield-shell {
   position: absolute;
-  inset: 0 0 auto;
-  height: var(--starfield-end);
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  height: calc(var(--starfield-end) - var(--nav-height));
   overflow: hidden;
   -webkit-mask-image: var(--starfield-mask);
   mask-image: var(--starfield-mask);

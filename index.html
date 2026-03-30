@@ -4,10 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
     <link rel="stylesheet" href="styles/hero.css" />
     <title>Cádhan Nelis | Computer Science</title>
   </head>
   <body>
+    <nav class="site-nav" aria-label="Primary">
+      <div class="site-nav__group">
+        <a class="site-nav__link" href="./">Projects</a>
+        <a
+          class="site-nav__link"
+          href="https://github.com/cadhann"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
+        <button class="site-nav__link" type="button" disabled>Contact</button>
+      </div>
+    </nav>
+
     <header class="hero">
       <div class="starfield-shell" aria-hidden="true">
         <canvas id="starfield"></canvas>
