@@ -62,10 +62,10 @@ export function initStarfield() {
   const MAX_FRAME_DELTA = 0.05;
   const POINTER_EASING = { base: 0.001, rate: 2.6 };
   const STAR_COUNT = {
-    reducedDensity: 12600,
-    density: 9200,
-    min: 104,
-    max: 224,
+    reducedDensity: 10400,
+    density: 7600,
+    min: 124,
+    max: 260,
   };
   const STAR_TUNING = {
     radiusMin: 0.45,
@@ -113,10 +113,10 @@ export function initStarfield() {
     alphaMax: 0.46,
     thicknessMin: 0.95,
     thicknessMax: 1.45,
-    initialDelayMin: 4.4,
-    initialDelayMax: 7.6,
-    delayMin: 4.7,
-    delayMax: 8.4,
+    initialDelayMin: 3.5,
+    initialDelayMax: 5.9,
+    delayMin: 3.7,
+    delayMax: 6.5,
     fadeRate: 0.14,
     tailMidpoint: 0.3,
     tailMidAlpha: 0.58,
