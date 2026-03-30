@@ -62,45 +62,16 @@
   background: none;
   color: rgba(246, 247, 255, 0.94);
   text-decoration: none;
-  position: relative;
   display: inline-flex;
   padding: 0;
   font: inherit;
   font-size: 0.9rem;
   line-height: 1;
-  transition:
-    color 180ms ease,
-    opacity 180ms ease;
-}
-
-.site-nav__link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -0.38rem;
-  height: 1px;
-  background: currentColor;
-  opacity: 0;
-  transform: translateY(0.28rem);
-  transition:
-    opacity 180ms ease,
-    transform 180ms ease;
+  --link-underline-offset: -0.38rem;
+  transition: color 180ms ease;
 }
 
 .site-nav__link:hover,
 .site-nav__link:focus-visible {
   color: #fff;
-  outline: none;
-}
-
-.site-nav__link:hover::after,
-.site-nav__link:focus-visible::after {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.site-nav__link:disabled {
-  cursor: default;
-  opacity: 0.58;
 }

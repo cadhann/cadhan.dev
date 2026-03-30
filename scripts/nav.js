@@ -11,6 +11,17 @@ export function initNav() {
     return;
   }
 
+  /**
+   * Jump to the top of the current page without changing the URL.
+   *
+   * @param {MouseEvent} event
+   * @returns {void}
+   */
+  function handleTopLinkClick(event) {
+    event.preventDefault();
+    window.scrollTo(0, 0);
+  }
+
   topLinks.forEach((topLink) => {
     if (!(topLink instanceof HTMLAnchorElement)) {
       return;
@@ -22,22 +33,9 @@ export function initNav() {
       targetUrl.pathname === window.location.pathname &&
       targetUrl.search === window.location.search;
 
-    if (!isCurrentPageLink) {
-      return;
+    if (isCurrentPageLink) {
+      topLink.addEventListener("click", handleTopLinkClick);
     }
-
-    /**
-     * Jump to the top of the current page instead of reloading it.
-     *
-     * @param {MouseEvent} event
-     * @returns {void}
-     */
-    function handleTopLinkClick(event) {
-      event.preventDefault();
-      window.scrollTo(0, 0);
-    }
-
-    topLink.addEventListener("click", handleTopLinkClick);
   });
 
   let scheduled = false;

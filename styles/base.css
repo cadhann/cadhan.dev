@@ -69,3 +69,32 @@ body {
 canvas {
   display: block;
 }
+
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--link-underline-offset, -0.32rem);
+  height: 1px;
+  background: currentColor;
+  opacity: 0;
+  transform: translateY(0.28rem);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.link-underline:focus-visible {
+  outline: none;
+}

@@ -215,38 +215,8 @@
 
 .contact-section__link,
 .contact-section__back-to-top {
-  position: relative;
   color: rgba(162, 228, 255, 0.98);
-  transition: color 180ms ease;
-}
-
-.contact-section__link::after,
-.contact-section__back-to-top::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -0.32rem;
-  height: 1px;
-  background: currentColor;
-  opacity: 0;
-  transform: translateY(0.28rem);
-  transition:
-    opacity 180ms ease,
-    transform 180ms ease;
-}
-
-.contact-section__link:hover::after,
-.contact-section__link:focus-visible::after,
-.contact-section__back-to-top:hover::after,
-.contact-section__back-to-top:focus-visible::after {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.contact-section__link:focus-visible,
-.contact-section__back-to-top:focus-visible {
-  outline: none;
+  --link-underline-offset: -0.32rem;
 }
 
 .project-card {
