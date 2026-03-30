@@ -244,6 +244,8 @@
   font-size: 0.83rem;
   line-height: 1.8;
   flex: 1;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .project-card__tags {
@@ -253,6 +255,7 @@
   margin: 1.15rem 0 0;
   padding: 0;
   list-style: none;
+  flex-shrink: 0;
 }
 
 .project-card__tag {
