@@ -75,9 +75,29 @@ function scheduleProjectBodyClamp() {
 }
 
 /**
- * Render one project card from local project data.
+ * Render the full-row portfolio notice card.
  *
  * @param {{
+ *   layout: "notice",
+ *   title: string,
+ *   body: string,
+ * }} project
+ * @returns {string}
+ */
+function renderNoticeCard(project) {
+  return `
+    <article class="project-card project-card--notice">
+      <h2 class="project-card__notice-title">${project.title}</h2>
+      <p class="project-card__notice-body">${project.body}</p>
+    </article>
+  `;
+}
+
+/**
+ * Render one standard project card from local project data.
+ *
+ * @param {{
+ *   layout: "project",
  *   variant: string,
  *   title: string,
  *   kicker: string,
@@ -103,6 +123,18 @@ function renderProjectCard(project) {
 }
 
 /**
+ * Render either the full-row notice or a standard project card.
+ *
+ * @param {import("../data/projects.js").Project} project
+ * @returns {string}
+ */
+function renderCard(project) {
+  return project.layout === "notice"
+    ? renderNoticeCard(project)
+    : renderProjectCard(project);
+}
+
+/**
  * Populate the project grid from the local data module.
  *
  * @returns {void}
@@ -114,7 +146,7 @@ export function initProjects() {
     return;
   }
 
-  grid.innerHTML = projects.map(renderProjectCard).join("");
+  grid.innerHTML = projects.map(renderCard).join("");
   clampProjectBodies();
   window.addEventListener("resize", scheduleProjectBodyClamp);
 

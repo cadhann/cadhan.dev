@@ -57,14 +57,9 @@
 
 /* Nav items are presented as plain text links */
 .site-nav__link {
-  appearance: none;
-  border: 0;
-  background: none;
   color: rgba(246, 247, 255, 0.94);
   text-decoration: none;
   display: inline-flex;
-  padding: 0;
-  font: inherit;
   font-size: 0.9rem;
   line-height: 1;
   --link-underline-offset: -0.38rem;

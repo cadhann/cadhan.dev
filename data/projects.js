@@ -1,15 +1,22 @@
 /**
  * @typedef {object} Project
- * @property {string} variant
+ * @property {"notice" | "project"} layout
+ * @property {string} [variant]
  * @property {string} title
- * @property {string} kicker
+ * @property {string} [kicker]
  * @property {string} body
- * @property {string[]} tags
+ * @property {string[]} [tags]
  */
 
 /** @type {Project[]} */
 export const projects = [
   {
+    layout: "notice",
+    title: "Portfolio Work In Progress",
+    body: "Projects, write-ups, and supporting detail are still being added and refined.",
+  },
+  {
+    layout: "project",
     variant: "project-card--placeholder-a",
     title: "Placeholder Project One",
     kicker: "Placeholder project category",
@@ -17,6 +24,7 @@ export const projects = [
     tags: ["placeholder", "sample tag", "tooling", "stack item", "detail"],
   },
   {
+    layout: "project",
     variant: "project-card--placeholder-b",
     title: "Placeholder Project Two",
     kicker: "Placeholder project category",
@@ -24,6 +32,7 @@ export const projects = [
     tags: ["placeholder", "sample tag", "tooling", "stack item", "detail"],
   },
   {
+    layout: "project",
     variant: "project-card--placeholder-c",
     title: "Placeholder Project Three",
     kicker: "Placeholder project category",
@@ -31,6 +40,7 @@ export const projects = [
     tags: ["placeholder", "sample tag", "tooling", "stack item", "detail"],
   },
   {
+    layout: "project",
     variant: "project-card--placeholder-d",
     title: "Placeholder Project Four",
     kicker: "Placeholder project category",
@@ -38,6 +48,7 @@ export const projects = [
     tags: ["placeholder", "sample tag", "tooling", "stack item", "detail"],
   },
   {
+    layout: "project",
     variant: "project-card--placeholder-e",
     title: "Placeholder Project Five",
     kicker: "Placeholder project category",
@@ -45,6 +56,7 @@ export const projects = [
     tags: ["placeholder", "sample tag", "tooling", "stack item", "detail"],
   },
   {
+    layout: "project",
     variant: "project-card--placeholder-f",
     title: "Placeholder Project Six",
     kicker: "Placeholder project category",

@@ -158,9 +158,7 @@
 }
 
 .contact-section__title,
-.contact-section__row,
-.contact-section__text,
-.contact-section__back-to-top {
+.contact-section__row {
   text-shadow:
     0 0 0.16rem rgba(0, 0, 0, 0.48),
     0 0 0.68rem rgba(0, 0, 0, 0.18);
@@ -351,6 +349,43 @@
   line-height: 1.2;
 }
 
+.project-card--notice {
+  --project-accent: 146, 110, 224;
+  grid-column: 1 / -1;
+  height: auto;
+  min-height: 0;
+  padding: 0.86rem 0.92rem 0.92rem;
+  justify-content: center;
+  gap: 0.28rem;
+  background:
+    linear-gradient(180deg, rgba(18, 21, 31, 0.98), rgba(10, 13, 18, 0.94)),
+    linear-gradient(
+      135deg,
+      rgba(146, 110, 224, 0.12),
+      rgba(82, 131, 208, 0.05) 56%,
+      rgba(146, 110, 224, 0.03) 100%
+    );
+}
+
+.project-card--notice::before {
+  border-top-color: rgba(116, 126, 160, 0.5);
+}
+
+.project-card__notice-title {
+  margin: 0;
+  color: rgba(246, 247, 255, 0.97);
+  font-size: clamp(0.92rem, 0.18vw + 0.9rem, 1.08rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.project-card__notice-body {
+  margin: 0;
+  color: rgba(198, 204, 224, 0.78);
+  font-size: clamp(0.7rem, 0.04vw + 0.69rem, 0.78rem);
+  line-height: 1.28;
+}
+
 /* 
 Placeholder CSS art for the projects with no image.
 THIS WILL BE GRADUALLY REMOVED AS PROJECTS ARE ADDED!!!
@@ -481,7 +516,7 @@ THIS WILL BE GRADUALLY REMOVED AS PROJECTS ARE ADDED!!!
   min-height: var(--hero-height);
 }
 
-@media (max-width: 70rem) {
+@media (max-width: 78rem) {
   .hero {
     min-height: max(var(--hero-height), 96rem);
   }
@@ -491,7 +526,7 @@ THIS WILL BE GRADUALLY REMOVED AS PROJECTS ARE ADDED!!!
   }
 }
 
-@media (max-width: 44rem) {
+@media (max-width: 50rem) {
   .hero {
     min-height: max(var(--hero-height), 126rem);
   }
