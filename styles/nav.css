@@ -8,7 +8,8 @@
   width: 100%;
   min-height: var(--nav-height);
   z-index: 10;
-  padding: calc(1.3rem + env(safe-area-inset-top, 0px)) 3.4rem 1.2rem 1.15rem;
+  padding: calc(1.3rem + env(safe-area-inset-top, 0px))
+    var(--projects-right-edge) 1.2rem 1.15rem;
   background-color: var(--nav-bg);
   -webkit-backdrop-filter: blur(0);
   backdrop-filter: blur(0);

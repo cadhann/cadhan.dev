@@ -24,6 +24,11 @@
   --fade-start: 60svh;
   --starfield-end: 104svh;
   --hero-height: 188svh;
+  --hero-content-width: min(94vw, 80rem);
+  --projects-grid-padding: clamp(0.9rem, 1.6vw, 1.5rem);
+  --projects-right-edge: calc(
+    (100vw - var(--hero-content-width)) / 2 + var(--projects-grid-padding)
+  );
   --starfield-mask: linear-gradient(
     to bottom,
     #000 0,
