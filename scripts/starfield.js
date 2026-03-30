@@ -61,7 +61,12 @@ export function initStarfield() {
   const MAX_PIXEL_RATIO = 2;
   const MAX_FRAME_DELTA = 0.05;
   const POINTER_EASING = { base: 0.001, rate: 2.6 };
-  const STAR_COUNT = { reducedDensity: 12600, density: 9200, min: 104, max: 224 };
+  const STAR_COUNT = {
+    reducedDensity: 12600,
+    density: 9200,
+    min: 104,
+    max: 224,
+  };
   const STAR_TUNING = {
     radiusMin: 0.45,
     radiusMax: 1.7,
@@ -91,7 +96,7 @@ export function initStarfield() {
     highlightRadius: 1.5,
     highlightAlpha: 0.28,
     highlightWidth: 0.65,
-    highlightScale: 1.8
+    highlightScale: 1.8,
   };
   const METEOR_TUNING = {
     angleMin: 0.85,
@@ -114,7 +119,7 @@ export function initStarfield() {
     delayMax: 8.4,
     fadeRate: 0.14,
     tailMidpoint: 0.3,
-    tailMidAlpha: 0.58
+    tailMidAlpha: 0.58,
   };
 
   /**
@@ -155,7 +160,9 @@ export function initStarfield() {
     clamp(
       Math.round(
         (sceneWidth * sceneHeight) /
-          (motionQuery.matches ? STAR_COUNT.reducedDensity : STAR_COUNT.density),
+          (motionQuery.matches
+            ? STAR_COUNT.reducedDensity
+            : STAR_COUNT.density),
       ),
       STAR_COUNT.min,
       STAR_COUNT.max,
@@ -206,8 +213,14 @@ export function initStarfield() {
     const speed = random(METEOR_TUNING.speedMin, METEOR_TUNING.speedMax);
 
     return {
-      x: random(width * METEOR_TUNING.spawnXMin, width * METEOR_TUNING.spawnXMax),
-      y: random(height * METEOR_TUNING.spawnYMin, height * METEOR_TUNING.spawnYMax),
+      x: random(
+        width * METEOR_TUNING.spawnXMin,
+        width * METEOR_TUNING.spawnXMax,
+      ),
+      y: random(
+        height * METEOR_TUNING.spawnYMin,
+        height * METEOR_TUNING.spawnYMax,
+      ),
       vx: Math.cos(angle) * speed,
       vy: Math.sin(angle) * speed,
       length: random(METEOR_TUNING.lengthMin, METEOR_TUNING.lengthMax),
@@ -306,7 +319,10 @@ export function initStarfield() {
   function recycleStar(star) {
     Object.assign(
       star,
-      createStar(random(0, width), -random(STAR_TUNING.recycleMinY, STAR_TUNING.recycleMaxY)),
+      createStar(
+        random(0, width),
+        -random(STAR_TUNING.recycleMinY, STAR_TUNING.recycleMaxY),
+      ),
     );
   }
 
@@ -317,7 +333,8 @@ export function initStarfield() {
    * @returns {void}
    */
   function updatePointer(delta) {
-    const easing = 1 - Math.pow(POINTER_EASING.base, delta * POINTER_EASING.rate);
+    const easing =
+      1 - Math.pow(POINTER_EASING.base, delta * POINTER_EASING.rate);
     pointer.x += (pointer.targetX - pointer.x) * easing;
     pointer.y += (pointer.targetY - pointer.y) * easing;
   }
@@ -474,7 +491,10 @@ export function initStarfield() {
    * @returns {void}
    */
   function render(frameTime) {
-    const delta = Math.min((frameTime - lastFrame) / 1000 || 0.016, MAX_FRAME_DELTA);
+    const delta = Math.min(
+      (frameTime - lastFrame) / 1000 || 0.016,
+      MAX_FRAME_DELTA,
+    );
     lastFrame = frameTime;
     drawScene(delta, frameTime * 0.001);
     animationFrame = window.requestAnimationFrame(render);
