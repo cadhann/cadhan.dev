@@ -42,8 +42,8 @@
 }
 
 .site-nav.is-scrolled::after {
-  opacity: 0;
-  box-shadow: 0 0 6px rgba(181, 116, 255, 0);
+  opacity: 0.34;
+  box-shadow: 0 0 8px rgba(181, 116, 255, 0.12);
 }
 
 /* Only the button group is interactive so the rest of the overlay stays transparent */
