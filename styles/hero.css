@@ -17,8 +17,23 @@
   --hero-meta-gap: calc(var(--hero-copy-gap) * 0.8);
 }
 
+.hero-intro {
+  width: calc(100% - (var(--projects-grid-padding) * 2));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .hero-title,
-.hero-copy,
+.hero-copy {
+  position: relative;
+  isolation: isolate;
+  max-width: 100%;
+  text-shadow:
+    0 0 0.18rem rgba(0, 0, 0, 0.56),
+    0 0 0.7rem rgba(0, 0, 0, 0.22);
+}
+
 .hero-meta {
   position: relative;
   isolation: isolate;
@@ -51,8 +66,9 @@
 
 .hero-title {
   margin: 0;
+  width: 100%;
   color: rgba(246, 247, 255, 0.96);
-  font-size: clamp(1rem, 1.35vw + 0.72rem, 2.75rem);
+  font-size: 1.85rem;
   font-weight: 700;
   line-height: 1.2;
   text-align: center;
@@ -68,7 +84,8 @@
 /* Intro copy sits under the main title with a narrower reading width. */
 .hero-copy {
   margin: var(--hero-copy-gap) 0 0;
-  width: min(90vw, 46.2rem);
+  width: 100%;
+  max-width: 46.2rem;
   color: rgba(232, 235, 248, 0.88);
   font-size: clamp(0.82rem, 0.28vw + 0.78rem, 1rem);
   font-weight: 400;
@@ -86,7 +103,7 @@
   font-weight: 400;
   line-height: 1;
   text-decoration: none;
-  white-space: nowrap;
+  text-align: center;
 }
 
 .hero-copy,
@@ -516,7 +533,7 @@ THIS WILL BE GRADUALLY REMOVED AS PROJECTS ARE ADDED!!!
   min-height: var(--hero-height);
 }
 
-@media (max-width: 78rem) {
+@media (max-width: 66rem) {
   .hero {
     min-height: max(var(--hero-height), 96rem);
   }
@@ -526,9 +543,15 @@ THIS WILL BE GRADUALLY REMOVED AS PROJECTS ARE ADDED!!!
   }
 }
 
-@media (max-width: 50rem) {
+@media (max-width: 46rem) {
   .hero {
     min-height: max(var(--hero-height), 126rem);
+  }
+
+  .hero-title {
+    font-size: 1.45rem;
+    white-space: normal;
+    text-wrap: balance;
   }
 
   .projects-grid {
