@@ -3,9 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cadhan</title>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
+    <link rel="stylesheet" href="styles/hero.css" />
+    <title>Cádhan Nelis / Computer Science</title>
   </head>
   <body>
-    <p>work in progress hooray!</p>
+    <nav class="site-nav" aria-label="Primary">
+      <div class="site-nav__group">
+        <a
+          class="site-nav__link link-underline"
+          href="./"
+          data-scroll-top="true"
+        >
+          Projects
+        </a>
+        <a
+          class="site-nav__link link-underline"
+          href="https://github.com/cadhann"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
+        <a class="site-nav__link link-underline" href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="starfield-shell" aria-hidden="true">
+        <canvas id="starfield"></canvas>
+      </div>
+      <div class="hero-content">
+        <div class="hero-intro">
+          <h1 class="hero-title">Software Developer | Computing Student</h1>
+          <p class="hero-copy">
+            I'm a Computer Science student at Queen's University Belfast with an
+            interest in data science. I combine analytical thinking with
+            technical skills to solve problems and build practical solutions.
+          </p>
+          <a
+            class="hero-meta"
+            href="https://github.com/cadhann"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span class="hero-meta__label">github:</span>
+            <span class="hero-meta__handle">@cadhann</span>
+          </a>
+          <span class="hero-meta">
+            <span class="hero-meta__label">email:</span>
+            <span class="hero-meta__handle">[tba]</span>
+          </span>
+        </div>
+        <section class="projects-grid" aria-label="Projects"></section>
+        <section class="contact-section" id="contact" aria-label="Contact">
+          <p class="contact-section__title">
+            Level 2 Student in BSc Computer Science with Professional Experience
+          </p>
+          <div class="contact-section__row">
+            <a
+              class="contact-section__link link-underline"
+              href="https://github.com/cadhann"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="contact-section__label">github:</span>
+              <span class="contact-section__value">@cadhann</span>
+            </a>
+            <span class="contact-section__separator" aria-hidden="true">.</span>
+            <a
+              class="contact-section__link link-underline"
+              href="https://www.linkedin.com/in/cadhan-nelis/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="contact-section__label">linkedin:</span>
+              <span class="contact-section__value">@cadhan-nelis</span>
+            </a>
+          </div>
+          <div class="contact-section__row contact-section__row--secondary">
+            <span class="contact-section__text">
+              <span class="contact-section__label">email:</span>
+              <span class="contact-section__value">[tba]</span>
+            </span>
+            <span class="contact-section__separator" aria-hidden="true">.</span>
+            <a
+              class="contact-section__back-to-top link-underline"
+              href="./"
+              data-scroll-top="true"
+            >
+              back to top
+            </a>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <script type="module" src="scripts/main.js"></script>
   </body>
 </html>

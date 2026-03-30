@@ -1,0 +1,100 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../assets/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../assets/fonts/JetBrainsMono-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Shared values for the background fade and starfield cutoff. */
+:root {
+  color-scheme: dark;
+  --page-bg: #03060c;
+  --nav-bg: rgb(13, 10, 22);
+  --nav-bg-rgb: 13, 10, 22;
+  --nav-height: calc(env(safe-area-inset-top, 0px) + 3.5rem);
+  --fade-start: 60svh;
+  --starfield-end: 104svh;
+  --hero-height: 188svh;
+  --hero-content-width: min(94vw, 80rem);
+  --projects-grid-padding: clamp(0.9rem, 1.6vw, 1.5rem);
+  --projects-right-edge: calc(
+    (100vw - var(--hero-content-width)) / 2 + var(--projects-grid-padding)
+  );
+  --starfield-mask: linear-gradient(
+    to bottom,
+    #000 0,
+    #000 var(--fade-start),
+    rgba(0, 0, 0, 0.82) calc(var(--fade-start) + 14svh),
+    rgba(0, 0, 0, 0.44) calc(var(--fade-start) + 28svh),
+    transparent var(--starfield-end)
+  );
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--page-bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 500;
+  /* The purple tone lives on the page background itself to avoid a hero seam */
+  background: linear-gradient(
+    180deg,
+    rgb(39, 30, 61) 0,
+    rgb(32, 25, 50) 30svh,
+    rgb(23, 19, 38) 92svh,
+    rgb(15, 13, 26) 148svh,
+    rgb(10, 10, 17) 176svh,
+    var(--page-bg) var(--hero-height)
+  );
+}
+
+/* Remove the inline gap */
+canvas {
+  display: block;
+}
+
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--link-underline-offset, -0.32rem);
+  height: 1px;
+  background: currentColor;
+  opacity: 0;
+  transform: translateY(0.28rem);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.link-underline:focus-visible {
+  outline: none;
+}
