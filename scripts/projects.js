@@ -1,5 +1,3 @@
-import { projects } from "../data/projects.js";
-
 let resizeFrame = 0;
 
 /**
@@ -75,67 +73,7 @@ function scheduleProjectBodyClamp() {
 }
 
 /**
- * Render the full-row portfolio notice card.
- *
- * @param {{
- *   layout: "notice",
- *   title: string,
- *   body: string,
- * }} project
- * @returns {string}
- */
-function renderNoticeCard(project) {
-  return `
-    <article class="project-card project-card--notice">
-      <h2 class="project-card__notice-title">${project.title}</h2>
-      <p class="project-card__notice-body">${project.body}</p>
-    </article>
-  `;
-}
-
-/**
- * Render one standard project card from local project data.
- *
- * @param {{
- *   layout: "project",
- *   variant: string,
- *   title: string,
- *   kicker: string,
- *   body: string,
- *   tags: string[],
- * }} project
- * @returns {string}
- */
-function renderProjectCard(project) {
-  const tags = project.tags
-    .map((tag) => `<li class="project-card__tag">${tag}</li>`)
-    .join("");
-
-  return `
-    <article class="project-card ${project.variant}">
-      <div class="project-card__media" aria-hidden="true"></div>
-      <h2 class="project-card__title">${project.title}</h2>
-      <p class="project-card__kicker">${project.kicker}</p>
-      <p class="project-card__body">${project.body}</p>
-      <ul class="project-card__tags" aria-label="Project technologies">${tags}</ul>
-    </article>
-  `;
-}
-
-/**
- * Render either the full-row notice or a standard project card.
- *
- * @param {import("../data/projects.js").Project} project
- * @returns {string}
- */
-function renderCard(project) {
-  return project.layout === "notice"
-    ? renderNoticeCard(project)
-    : renderProjectCard(project);
-}
-
-/**
- * Populate the project grid from the local data module.
+ * Clamp the pre-rendered project cards once layout and fonts are ready.
  *
  * @returns {void}
  */
@@ -146,7 +84,10 @@ export function initProjects() {
     return;
   }
 
-  grid.innerHTML = projects.map(renderCard).join("");
+  if (!grid.childElementCount) {
+    return;
+  }
+
   clampProjectBodies();
   window.addEventListener("resize", scheduleProjectBodyClamp);
 

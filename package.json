@@ -1,0 +1,10 @@
+{
+  "name": "cadhan-dev",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "generate:projects": "node scripts/generate-project-grid.mjs",
+    "watch:projects": "node --watch scripts/generate-project-grid.mjs"
+  }
+}
