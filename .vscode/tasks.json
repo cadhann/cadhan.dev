@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "watch:projects",
+      "type": "npm",
+      "script": "watch:projects",
+      "isBackground": true,
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "reveal": "never",
+        "panel": "dedicated"
+      },
+      "problemMatcher": [
+        {
+          "owner": "projects-watch",
+          "pattern": {
+            "regexp": "^$"
+          },
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": ".*watch:projects.*",
+            "endsPattern": ".*Waiting for file changes before restarting.*"
+          }
+        }
+      ]
+    }
+  ]
+}
