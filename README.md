@@ -14,11 +14,9 @@ Clone the repo and generate the project grid:
 npm run generate:projects
 ```
 
-Start your local static server of choice:
+Start your local static server of choice.
 
-```bash
-# for example, with Five Server or Live Server in VS Code
-```
+If you open the project in VS Code, the project grid watcher is configured to start automatically on folder open. With [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) running, changes to `data/projects.js` will regenerate the project cards and reload the page.
 
 Build for production to the `dist` folder:
 
