@@ -4,7 +4,13 @@ import { injectProjectsGrid } from "./project-grid-render.mjs";
 
 const rootDir = new URL("../", import.meta.url);
 const distDir = new URL("../dist/", import.meta.url);
-const runtimeScripts = ["main.js", "nav.js", "projects.js", "starfield.js"];
+const runtimeScripts = [
+  "email.js",
+  "main.js",
+  "nav.js",
+  "projects.js",
+  "starfield.js",
+];
 const rootFiles = ["index.html", "CNAME"];
 const rootDirectories = ["styles", "assets"];
 
